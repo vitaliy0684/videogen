@@ -1,0 +1,17 @@
+VideoGeneratorAI — БЫСТРЫЙ СТАРТ
+
+1) Установи Python 3.8+ с python.org (в Windows включи "Add to PATH").
+2) Перейди в папку проекта VideoGeneratorAI.
+3) Установи зависимости:
+   pip install -r requirements.txt
+4) Скопируй .env.example в .env или заполни config.py:
+   API_KEY=...
+   BOT_TOKEN=...
+5) Запусти диагностику:
+   python diagnostics/check_system.py
+6) Запусти Telegram-бота:
+   python bot.py
+7) Запусти сайт:
+   python app.py
+
+Если есть ошибки, смотри файлы в папке docs/.

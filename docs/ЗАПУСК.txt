@@ -1,0 +1,43 @@
+ПОДРОБНЫЙ ЗАПУСК VideoGeneratorAI
+
+1. Получение API_KEY (proxyapi.ru)
+- Зарегистрируйся на https://proxyapi.ru
+- Создай API-ключ в личном кабинете.
+- Добавь ключ в .env или config.py в поле API_KEY.
+
+2. Создание Telegram-бота
+- Открой Telegram и найди @BotFather.
+- Выполни команду /newbot.
+- Скопируй токен и добавь в .env или config.py в поле BOT_TOKEN.
+
+3. Установка зависимостей
+- Рекомендуется создать venv:
+  python -m venv venv
+  Windows: venv\Scripts\activate
+  Linux/Mac: source venv/bin/activate
+- Установи пакеты:
+  pip install -r requirements.txt
+
+4. Проверка окружения
+- python diagnostics/check_system.py
+- python diagnostics/check_dependencies.py
+- python diagnostics/check_api_keys.py
+
+5. Запуск проекта
+- Бот:
+  python bot.py
+- Сайт:
+  python app.py
+
+6. Проверка работы
+- Для сайта открой http://127.0.0.1:5000
+- Для бота отправь /start и текстовый промпт.
+
+7. Остановка
+- Нажми Ctrl+C в терминале.
+
+8. Развертывание на сервере
+- Для фонового запуска можно использовать screen/tmux:
+  screen -S videobot
+  python bot.py
+- Для автозапуска используй systemd unit-файлы.

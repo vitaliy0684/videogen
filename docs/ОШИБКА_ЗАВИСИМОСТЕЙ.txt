@@ -1,0 +1,22 @@
+ОШИБКА ЗАВИСИМОСТЕЙ — РЕШЕНИЕ
+
+1) Обновление pip
+python -m pip install --upgrade pip
+
+2) Установка из requirements.txt
+pip install -r requirements.txt
+
+3) Виртуальное окружение (рекомендуется)
+python -m venv venv
+Windows: venv\Scripts\activate
+Linux/Mac: source venv/bin/activate
+
+4) Конфликты версий
+- Удали конфликтующие пакеты:
+  pip uninstall openai Flask pyTelegramBotAPI -y
+- Установи заново:
+  pip install -r requirements.txt
+
+Частая ошибка:
+❌ ОШИБКА: Библиотека openai не найдена.
+РЕШЕНИЕ: pip install openai==1.30.0
