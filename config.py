@@ -28,7 +28,8 @@ PROXY_API_URL = os.getenv("PROXY_API_URL", "https://api.proxyapi.ru/openai/v1")
 
 # Папка для сохранения видео.
 GENERATED_VIDEOS_DIR = os.getenv("GENERATED_VIDEOS_DIR", "generated_videos")
-GENERATED_VIDEOS_PATH = Path(GENERATED_VIDEOS_DIR)
+BASE_DIR = Path(__file__).resolve().parent
+GENERATED_VIDEOS_PATH = (BASE_DIR / GENERATED_VIDEOS_DIR).resolve()
 
 # Режим отладки.
 DEBUG = os.getenv("DEBUG", "False").lower() in {"1", "true", "yes", "on"}

@@ -109,3 +109,36 @@ python test.py --prompt "Кот в космосе" --test-api
   - запущено несколько экземпляров бота, оставь только один процесс
 
 Подробные инструкции смотри в `docs/`.
+
+## Деплой на PythonAnywhere
+
+Платформа: [PythonAnywhere](https://www.pythonanywhere.com/)
+
+1. Создай аккаунт и открой **Bash Console**.
+2. Клонируй репозиторий:
+   ```bash
+   git clone https://github.com/vitaliy0684/videogen.git
+   cd videogen
+   ```
+3. Создай виртуальное окружение и установи зависимости:
+   ```bash
+   mkvirtualenv --python=python3.10 videogen-env
+   pip install -r requirements.txt
+   ```
+4. Создай файл `.env` в корне проекта и заполни `API_KEY`, `BOT_TOKEN` (по необходимости).
+5. Во вкладке **Web** создай новое Flask-приложение (Manual configuration, Python 3.10).
+6. В `WSGI configuration file` укажи проект:
+   ```python
+   import sys
+   path = '/home/<your_username>/videogen'
+   if path not in sys.path:
+       sys.path.append(path)
+
+   from wsgi import application
+   ```
+7. В разделе **Virtualenv** укажи путь к окружению:
+   - `/home/<your_username>/.virtualenvs/videogen-env`
+8. Нажми **Reload** в разделе Web.
+
+После перезагрузки сайт будет доступен по адресу:
+- `https://<your_username>.pythonanywhere.com`
